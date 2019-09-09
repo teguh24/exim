@@ -22,7 +22,7 @@ class ImportController extends Controller
         $currency=currency::all();
         $supplier=supplier::all();
         $origin=origin::all();
-        $ppjk=ppjk::all();        
+        $ppjk=ppjk::all();                       
         return view('import.home',compact('data','currency','supplier','origin','ppjk'));
     }
 

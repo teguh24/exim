@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class import extends Model
 {
+    protected $connection = 'mysql2';
     protected $guarded=[];
+    protected $table='tblpibhdr';
     /**
      * The import that belong to the origin.
      */
-    public function origins()
+    /*public function origins()
     {
         return $this->hasMany('App\origin','id','origin_id');
     }
@@ -25,5 +27,5 @@ class import extends Model
     public function currencys()
     {
         return $this->hasMany('App\currency','id','currency_id');
-    }
+    }*/
 }

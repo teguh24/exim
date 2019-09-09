@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\import;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data=import::join('pib.tblpibkms','pib.tblpibkms.CAR','pib.tblpibhdr.CAR')
+        ->join('pib.tblpibdok','pib.tblpibdok.CAR','pib.tblpibhdr.CAR')
+        ->where('pib.tblpibdok.DokKd',705)
+        ->orWhere('pib.tblpibdok.DokKd',740)
+        ->orWhere('pib.tblpibdok.DokKd',704)        
+        ->get();    
+        return view('tema2.index',compact('data'));
     }
 }
