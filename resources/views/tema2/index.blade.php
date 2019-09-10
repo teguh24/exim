@@ -28,7 +28,7 @@
                     <p class="text-muted font-13 m-b-30">
                       
                     </p>
-                    <table id="datatable" class="table table-striped table-bordered">
+                    <table id="datatable-fixed-header" class="table table-striped table-bordered">
                       <thead>
                           <tr>
                             <th>Aju</th>
@@ -43,38 +43,30 @@
                             <th>SPPB</th>            
                         </tr>        
                       </thead>
-                      <tfoot>
-                          <tr>
-                            <th>Aju</th>
-                            <th>Supplier</th>
-                            <th>Origin</th>
-                            <th>BL/AWB</th>
-                            <th>Vessel</th>
-                            <th>Jm_Kem</th>
-                            <th>Ship</th>
-                            <th>ETD</th>
-                            <th>ETA</th>
-                            <th>SPPB</th>             
-                        </tr>        
-                      </tfoot>
                       <tbody>
                         @foreach($data as $row)
                         <tr>
                           <td>{{$row->CAR}}</td>
                           <td>{{$row->PasokNama}}</td>
-                          <td>{{$row->PasokNeg}}</td>
+                          <td>{{$row->UrEdi}}</td>
                           <td>{{$row->DokNo}}</td>
-                          <td>{{$row->AngkutNama}}/{{$row->AngkutNo}}</td>
-                          <td>{{$row->JmKemas}} {{$row->JnKemas}}</td>
+                          <td>{{$row->AngkutNama}} V.{{$row->AngkutNo}}</td>
+                          <td>{{$row->JmKemas}} {{$row->UREDI}}</td>
                           <td>
                             @if($row->Moda==1)SEA
                             @else
                             AIR
                             @endif
                           </td>
-                          <td>{{$row->DokTg}}</td>
-                          <td>{{$row->TgTiba}}</td>
-                          <td>{{$row->PibTg}}</td>
+                          <td>{{$row->DokTg->format('d/m/Y')}}</td>
+                          <td>{{$row->TgTiba->format('d/m/Y')}}</td>
+                          <td>
+                            @if($row->PibTg!=null)
+                            {{$row->PibTg->format('d/m/Y')}}
+                            @else
+                            Belum SPPB
+                            @endif
+                          </td>
                         </tr>
                         @endforeach
                       </tbody>

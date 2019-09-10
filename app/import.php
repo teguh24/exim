@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class import extends Model
 {
+    protected $dates = ['DokTg','TgTiba','PibTg'];
     protected $connection = 'mysql2';
     protected $guarded=[];
     protected $table='tblpibhdr';

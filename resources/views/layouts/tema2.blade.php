@@ -71,10 +71,10 @@
                       </form>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-dashboard"></i>Dashboard <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-bar-chart"></i>Report <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">CR</a></li>
-                      <li><a href="#">IMPORT</a></li>
+                      <li><a href="{{asset('api')}}">API-P</a></li>
+                      <li><a href="{{asset('besi')}}">PI BESI BAJA</a></li>
                       <li><a href="#">DWELLING TIME</a></li>
                       <li><a href="#">EXPORT</a></li>                      
                     </ul>
@@ -82,7 +82,7 @@
                   <li><a><i class="fa fa-ship"></i>Shipment Import <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="#">Pending</a></li>
-                      <li><a href="#">Done</a></li>
+                      <li><a href="{{asset('home')}}">Done</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-ship"></i>Shipment Export <span class="fa fa-chevron-down"></span></a>
@@ -238,7 +238,7 @@
     <script src="gentelella-master/vendors/jszip/dist/jszip.min.js"></script>
     <script src="gentelella-master/vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="gentelella-master/vendors/pdfmake/build/vfs_fonts.js"></script>
-
+    
     <!-- Custom Theme Scripts -->
     <script src="gentelella-master/build/js/custom.min.js"></script>
   </body>
